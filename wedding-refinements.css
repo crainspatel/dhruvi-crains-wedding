@@ -126,3 +126,21 @@ footer .footer-wordmark b{font:400 24px 'Great Vibes',cursive;color:#ddc58f}
   .invitation-family-parents .invitation-relative{font-size:19px}
   .invitation-family-people .invitation-relative{font-size:20px}
 }
+
+/* The entire Gujarati phrase has one unified tooltip trigger. */
+.invitation-heading-refined .aagrah-meaning-title{display:block;font:600 13px/1.4 'DM Sans',sans-serif;color:#f9eedb;letter-spacing:0;margin:0 0 7px}
+@media(max-width:650px){.invitation-heading-refined .aagrah-meaning-title{font-size:12px}}
+
+/* Parent/sibling acknowledgements: balanced, airy, no ornamental divider between families. */
+.invitation-family-credits{gap:24px;padding-top:23px}
+.invitation-family-group .invitation-family-label{margin-bottom:14px}
+.invitation-family-people::after{content:none}
+.invitation-family-parents{width:100%;max-width:550px;margin-inline:auto;column-gap:22px}
+.invitation-family-parents .invitation-relative{line-height:1.24}
+.invitation-family-siblings{width:100%;max-width:550px;margin-inline:auto;column-gap:22px}
+@media(max-width:600px){
+ .invitation-family-credits{gap:24px}
+ .invitation-family-group .invitation-family-label{margin-bottom:12px}
+ .invitation-family-parents,.invitation-family-siblings{column-gap:18px}
+ .invitation-family-parents .invitation-relative{line-height:1.22}
+}
