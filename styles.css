@@ -245,3 +245,6 @@
   .moment-card,.moment-card.wide{grid-column:auto}
   .moment-card img,.moment-card.wide img,.moment-card.tall img{height:auto;max-height:none;aspect-ratio:auto}
 }
+
+/* Align hero Explore link with the actual itinerary tabs rather than the top padding of the section. */
+#celebration-itinerary{scroll-margin-top:24px}
