@@ -1,6 +1,6 @@
 /* Wedding RSVP — entirely isolated from existing website components. */
-.rsvp-nav-button{border:1px solid rgba(187,155,91,.75);border-radius:999px;padding:11px 19px;background:transparent;color:var(--forest,#324e41);font:600 12px/1 'DM Sans',sans-serif;letter-spacing:.1em;cursor:pointer;white-space:nowrap;transition:background .2s ease}
-.rsvp-nav-button:hover{background:#eee7d9}.rsvp-nav-button span{margin-left:7px;color:var(--gold,#bb9b5b)}
+.rsvp-nav-button{border:1px solid var(--sage,#526c5b);border-radius:999px;padding:12px 22px;background:var(--sage,#526c5b);color:#fff;font:700 12px/1 'DM Sans',sans-serif;letter-spacing:.12em;cursor:pointer;white-space:nowrap;box-shadow:0 3px 9px rgba(50,78,65,.12);transition:background .2s ease,border-color .2s ease,box-shadow .2s ease}
+.rsvp-nav-button:hover{background:var(--forest,#324e41);border-color:var(--forest,#324e41);box-shadow:0 5px 14px rgba(50,78,65,.18)}.rsvp-nav-button span{margin-left:7px;color:#fff}
 .rsvp-nav-button:focus-visible,.rsvp-modal button:focus-visible,.rsvp-modal input:focus-visible{outline:2px solid var(--gold,#bb9b5b);outline-offset:3px}
 .rsvp-overlay[hidden],.rsvp-success[hidden]{display:none!important}
 .rsvp-overlay{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:16px;background:rgba(25,41,33,.67);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
@@ -37,3 +37,35 @@ body.rsvp-locked{overflow:hidden}
 #rsvp-success:not([hidden]){display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:min(65dvh,450px);padding:26px 10px 30px}
 #rsvp-success p{max-width:380px;margin:10px auto 14px}
 @media(max-width:600px){#rsvp-success:not([hidden]){min-height:60dvh}}
+
+/* An understated itinerary shortcut lives at the lower right of the hero. */
+.hero-footer-nav{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:14px;width:min(100%,1010px);min-height:76px;padding:0 20px}
+.hero-footer-nav .scroll-hint{grid-column:2;justify-self:center;padding:16px 0;margin:0}
+.hero-footer-nav .hero-side-itinerary{grid-column:3;justify-self:end;position:static;writing-mode:horizontal-tb;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;padding:8px 1px 9px;border-bottom:1px solid rgba(187,155,91,.64);font:500 11px/1.3 'DM Sans',sans-serif;letter-spacing:.045em;text-decoration:none;text-transform:none;color:#78796f;transition:color .18s ease,border-color .18s ease}
+.hero-side-itinerary span{color:var(--gold,#bb9b5b);font-size:13px}
+.hero-side-itinerary:hover{color:var(--forest,#324e41);border-bottom-color:var(--forest,#324e41)}
+.hero-side-itinerary:focus-visible{outline:2px solid var(--gold,#bb9b5b);outline-offset:5px}
+@media(max-width:650px){
+  .hero-footer-nav{grid-template-columns:minmax(0,1fr) auto;min-height:66px;gap:10px;padding:0 6px;width:100%}
+  .hero-footer-nav .scroll-hint{grid-column:1;justify-self:start;font-size:9px;letter-spacing:.1em;gap:6px;white-space:nowrap}
+  .hero-footer-nav .hero-side-itinerary{grid-column:2;font-size:11px;padding:9px 0;letter-spacing:.02em}
+}
+@media(max-width:355px){.hero-footer-nav .scroll-hint{font-size:8px;letter-spacing:.06em}.hero-footer-nav .hero-side-itinerary{font-size:10px}}
+
+/* Enhance the pre-existing 'The Celebrations' heading; itinerary content stays unchanged. */
+.celebrations .section-title{max-width:800px;padding:0 15px;margin-bottom:clamp(42px,5vw,67px)}
+.celebrations .section-title::before{content:"";display:block;width:1px;height:42px;margin:0 auto 27px;background:linear-gradient(to bottom,transparent,#bfa46e)}
+.celebrations .section-title .eyebrow{font-size:11px;letter-spacing:.26em;color:#8b856d;margin:0 0 12px}
+.celebrations .section-title h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(64px,8vw,98px);letter-spacing:-.055em;line-height:1.05;color:var(--forest,#324e41);margin:8px 0 20px}
+.celebrations .section-title h2 em{color:var(--rose,#bd8f88);font-weight:400}
+.celebrations .section-title>p:last-child{max-width:530px;margin:0 auto;color:#666d64;font-size:clamp(13px,1.5vw,15px);line-height:1.8}
+.celebrations .section-title::after{content:"✦";display:block;color:var(--gold,#bb9b5b);font:16px/1 'Cormorant Garamond',serif;margin:23px auto 0}
+@media(max-width:600px){.celebrations .section-title::before{height:31px;margin-bottom:25px}.celebrations .section-title h2{font-size:clamp(56px,12vw,73px)}.celebrations .section-title{margin-bottom:36px}}
+
+/* Final RSVP invitation in the existing closing section. */
+.closing-rsvp{display:flex;flex-direction:column;align-items:center;gap:4px;margin:31px auto 0;position:relative;z-index:1}
+.closing .closing-rsvp p{font:400 14px/1.6 'DM Sans',sans-serif;color:#68766b;margin:0 0 9px}
+.closing-rsvp-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;border:1px solid #526c5b;border-radius:3px;background:#526c5b;color:#fff;padding:13px 28px;font:600 12px/1.2 'DM Sans',sans-serif;letter-spacing:.09em;cursor:pointer;transition:background .18s ease}
+.closing-rsvp-button:hover{background:#324e41}
+.closing-rsvp-button:focus-visible{outline:3px solid var(--gold,#bb9b5b);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.hero-side-itinerary,.closing-rsvp-button{transition:none}}

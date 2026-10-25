@@ -8,7 +8,7 @@ const status=document.getElementById('rsvp-status');
 const success=document.getElementById('rsvp-success');
 const formHeading=document.getElementById('rsvp-form-heading');
 const submit=form.querySelector('[type="submit"]');
-const opener=document.querySelector('[data-rsvp-open]');
+const openers=document.querySelectorAll('[data-rsvp-open]');
 const nonceInput=document.getElementById('rsvp-nonce');
 const origin=window.location.origin;
 let oldFocus=null, waiting=false, nonce='', timeout=null;
@@ -31,7 +31,7 @@ function finish(ok,msg){
    status.textContent=msg||'We could not confirm your RSVP. Please check with us before trying again.';
  }
 }
-opener.addEventListener('click',show);
+openers.forEach(button=>button.addEventListener('click',show));
 dialog.querySelectorAll('[data-rsvp-close]').forEach(b=>b.addEventListener('click',hide));
 modal.addEventListener('mousedown',e=>{if(e.target===modal)hide();});
 document.addEventListener('keydown',e=>{
