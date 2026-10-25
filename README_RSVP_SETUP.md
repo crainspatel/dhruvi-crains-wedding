@@ -14,3 +14,7 @@ The public deployment URL is not a secret, but it is usable by anyone to submit 
 
 ## Important
 This package contains APPS_SCRIPT_Code.gs.txt as a private setup aid; REMOVE it before uploading site files to the public repository to minimize disclosure of backend implementation. Deploy only the site files (index.html, rsvp.css, rsvp.js; other existing website files can stay as-is).
+
+
+## Confirmation and favicon fix
+The RSVP heading and intro disappear after a verified successful submission; the thank-you state replaces them. Favicon files now include favicon.svg, favicon.ico, favicon-32x32.png, and apple-touch-icon.png. Upload these files to the site ROOT beside index.html. Browser tabs can cache old icons: use a private window or hard-refresh after publishing.

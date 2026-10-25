@@ -14,7 +14,10 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
 <link href="./styles.css" rel="stylesheet"/>
-<link href="./on-scroll.css" rel="stylesheet"/><link href="./story-journey.css" rel="stylesheet"/><link rel="stylesheet" href="./rsvp.css"/><link rel="icon" type="image/svg+xml" href="./favicon.svg"/></head>
+<link href="./on-scroll.css" rel="stylesheet"/><link href="./story-journey.css" rel="stylesheet"/><link rel="stylesheet" href="./rsvp.css"/><link rel="icon" type="image/svg+xml" href="./favicon.svg?v=2"/>
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png?v=2"/>
+<link rel="shortcut icon" href="./favicon.ico?v=2"/>
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=2"/></head>
 <body>
 <div aria-hidden="true" class="scroll-progress"></div>
 <a class="skip-link" href="#celebrations">Skip to celebration details</a>
@@ -147,9 +150,11 @@
 <div id="wedding-rsvp-overlay" class="rsvp-overlay" hidden>
   <section class="rsvp-modal" id="wedding-rsvp" role="dialog" aria-modal="true" aria-labelledby="rsvp-title" aria-describedby="rsvp-intro" tabindex="-1">
     <button class="rsvp-close" type="button" data-rsvp-close aria-label="Close RSVP">×</button>
-    <p class="rsvp-overline">DHRUVI &amp; CRAINS · DECEMBER 2026</p>
-    <h2 id="rsvp-title">Kindly <em>RSVP</em></h2>
-    <p id="rsvp-intro">We can't wait to celebrate with you.</p>
+    <div id="rsvp-form-heading">
+      <p class="rsvp-overline">DHRUVI &amp; CRAINS · DECEMBER 2026</p>
+      <h2 id="rsvp-title">Kindly <em>RSVP</em></h2>
+      <p id="rsvp-intro">We can't wait to celebrate with you.</p>
+    </div>
     <form id="wedding-rsvp-form" method="post" target="rsvp-submission-frame" novalidate>
       <label for="rsvp-name">Your Name <span aria-hidden="true">*</span></label>
       <input id="rsvp-name" name="name" type="text" autocomplete="name" maxlength="150" required placeholder="Your name"/>
@@ -168,8 +173,8 @@
     </form>
     <div class="rsvp-success" id="rsvp-success" hidden role="status" aria-live="polite">
       <span aria-hidden="true" class="rsvp-success-symbol">♡</span>
-      <h3>Thank you!</h3>
-      <p>Thank you for your RSVP! We're so happy you'll be part of our celebrations, and we can't wait to see you.</p>
+      <h3 id="rsvp-success-title">Thank you!</h3>
+      <p>We're so happy you'll be part of our celebrations, and we can't wait to see you.</p>
       <button class="rsvp-done" type="button" data-rsvp-close>Back to the celebrations</button>
     </div>
     <iframe name="rsvp-submission-frame" id="rsvp-submission-frame" title="RSVP submission response" class="rsvp-response-frame" aria-hidden="true" tabindex="-1"></iframe>

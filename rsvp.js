@@ -6,6 +6,7 @@ const dialog=document.getElementById('wedding-rsvp');
 const form=document.getElementById('wedding-rsvp-form');
 const status=document.getElementById('rsvp-status');
 const success=document.getElementById('rsvp-success');
+const formHeading=document.getElementById('rsvp-form-heading');
 const submit=form.querySelector('[type="submit"]');
 const opener=document.querySelector('[data-rsvp-open]');
 const nonceInput=document.getElementById('rsvp-nonce');
@@ -19,7 +20,10 @@ function finish(ok,msg){
  waiting=false;clearTimeout(timeout);submit.disabled=false;submit.textContent='Send RSVP';
  if(ok){
    form.hidden=true;
+   formHeading.hidden=true;
    success.hidden=false;
+   dialog.setAttribute('aria-labelledby','rsvp-success-title');
+   dialog.removeAttribute('aria-describedby');
    status.textContent='';
    success.setAttribute('tabindex','-1');
    success.focus();

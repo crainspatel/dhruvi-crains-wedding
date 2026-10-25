@@ -31,3 +31,9 @@ body.rsvp-locked{overflow:hidden}
 /* Hide the form after a confirmed successful submission. */
 #wedding-rsvp-form[hidden]{display:none!important}
 .rsvp-success:focus{outline:none}
+
+/* Completed RSVP: remove all form-only content and its heading. */
+#rsvp-form-heading[hidden]{display:none!important}
+#rsvp-success:not([hidden]){display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:min(65dvh,450px);padding:26px 10px 30px}
+#rsvp-success p{max-width:380px;margin:10px auto 14px}
+@media(max-width:600px){#rsvp-success:not([hidden]){min-height:60dvh}}
