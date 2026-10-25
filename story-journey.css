@@ -1,0 +1,106 @@
+
+/* Story and photographs in one continuous editorial flow. */
+.story-journey{padding:105px max(22px,5vw) 34px;background:#f8f5ee;overflow:clip}
+.story-journey-header{text-align:center;max-width:720px;margin:0 auto 40px}
+.story-journey-header h2{font:500 clamp(64px,8vw,104px)/1 'Cormorant Garamond',serif;color:#324e41;letter-spacing:-.035em;margin:14px 0}
+.story-journey-header h2 em,.story-beat h3 em{font-weight:400;color:#b88d86}
+.story-journey-header>p:last-child{color:#77776c;font-size:15px}
+.story-beat{max-width:1130px;margin:0 auto;display:grid;grid-template-columns:1fr .88fr;gap:clamp(35px,7vw,105px);align-items:center;padding:70px 0;border-bottom:1px solid #e9dfd0}
+.story-beat-reverse .story-beat-copy{order:2}.story-beat-reverse>.story-beat-photo{order:1}
+.story-beat-copy{max-width:505px}
+.story-number{display:block;letter-spacing:.23em;color:#aa8d5b;font-size:11px;font-weight:700;margin:0 0 17px}
+.story-beat h3{font:500 clamp(37px,4.8vw,66px)/1.07 'Cormorant Garamond',serif;letter-spacing:-.03em;color:#304d40;margin:0 0 23px}
+.story-beat-copy p{color:#59645c;line-height:1.87;font-size:15px;margin:0 0 13px}
+.story-beat-copy strong{color:#374c3e}
+.story-beat-photo{margin:0;min-width:0;padding:11px 11px 17px;background:#fffdf8;border:1px solid #e8ddc9;box-shadow:0 22px 56px rgba(52,41,28,.11);transform:rotate(-2deg)}
+.story-beat-reverse .story-beat-photo{transform:rotate(2.5deg)}
+.story-beat-photo img{display:block;width:100%;height:auto;max-height:560px;object-fit:contain;background:#f0eade}
+.story-beat-photo figcaption{margin:15px 5px 2px;text-align:center;color:#93775c;font:27px 'Great Vibes',cursive}
+.story-duo{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:10px}
+.story-duo .story-beat-photo{padding:7px 7px 10px}.story-duo .story-beat-photo img{max-height:460px}.story-duo .story-beat-photo figcaption{font-size:22px;margin-top:8px}
+.story-duo .story-beat-photo:first-child{transform:rotate(-5deg) translateY(15px)}.story-duo .story-beat-photo:last-child{transform:rotate(5deg) translateY(-15px)}
+.story-transition{text-align:center;max-width:790px;margin:0 auto;padding:83px 16px 48px}
+.story-transition p{font:italic 25px 'Cormorant Garamond',serif;color:#687569;margin:0 0 12px}
+.story-transition .story-transition-script{font:400 clamp(36px,5.1vw,66px) 'Great Vibes',cursive;color:#b58b86}
+.story-flourish{background:#f4eee3;padding:52px 20px 88px;text-align:center}
+.story-flourish figure{width:min(85%,480px);margin:auto;transform:rotate(-2deg);padding:12px 12px 18px;background:#fffdf8;box-shadow:0 16px 40px rgba(52,41,28,.13)}
+.story-flourish img{display:block;width:100%;height:auto;object-fit:contain}
+.story-flourish figcaption{font:30px 'Great Vibes',cursive;color:#92745d;margin-top:14px}
+@media(max-width:760px){.story-journey{padding:74px 18px 0}.story-beat{grid-template-columns:1fr;gap:26px;padding:43px 0}.story-beat .story-beat-copy,.story-beat-reverse .story-beat-copy{order:0}.story-beat .story-beat-photo,.story-beat-reverse>.story-beat-photo{order:1;width:min(92%,440px);margin:auto}.story-duo{max-width:540px;margin:auto}.story-journey-header{margin-bottom:18px}.story-transition{padding:62px 5px 20px}.story-transition p{font-size:21px}}
+@media(prefers-reduced-motion:no-preference){.story-beat-photo,.story-duo,.story-beat-copy{transition:transform .9s cubic-bezier(.17,.67,.3,1),opacity .9s}.story-beat[data-story-reveal]:not(.story-in-view) .story-beat-copy{transform:translateY(25px);opacity:.25}.story-beat[data-story-reveal]:not(.story-in-view)>.story-beat-photo,.story-beat[data-story-reveal]:not(.story-in-view)>.story-duo{transform:translateY(34px);opacity:.35}}
+
+/* The US wedding photograph concludes the visual story. The tagline stays below, outside the frame. */
+.story-forever{padding:72px 20px 100px;background:radial-gradient(ellipse at 50% 40%,#fff9f0 0%,#f4eee3 78%)}
+.story-forever .eyebrow{margin:0 auto 32px;text-align:center}
+.story-forever figure{width:min(86%,550px);padding:13px;background:#fffdf8;transform:rotate(-1deg);box-shadow:0 20px 50px rgba(52,41,28,.13)}
+.story-forever img{width:100%;height:auto;display:block;object-fit:contain}
+.story-forever .forever-caption{font:clamp(38px,5.5vw,62px)/1.15 'Cormorant Garamond',serif;color:#41594a;margin:34px auto 0;text-align:center}
+@media(max-width:600px){.story-forever{padding:58px 18px 76px}.story-forever figure{width:min(96%,450px)}}
+
+/* Polished narrative ending; readable and not script-heavy. */
+.story-transition .story-transition-line{font:500 clamp(31px,4.8vw,54px)/1.16 'Cormorant Garamond',serif;letter-spacing:-.017em;color:#395545;max-width:710px;margin:22px auto 0}
+.story-beat-copy p{line-height:1.83}
+
+/* Story editorial typographic polish: light, readable, never a text wall. */
+.story-journey-header{margin-bottom:25px}
+.story-journey-header h2{margin-bottom:16px}
+.story-beat{gap:clamp(30px,6vw,88px);padding:clamp(52px,6vw,79px) 0}
+.story-beat-copy{max-width:535px}
+.story-beat h3{max-width:490px;margin-bottom:24px;text-wrap:balance}
+.story-number{display:flex;align-items:center;gap:14px;letter-spacing:.22em}
+.story-number:after{content:"";display:block;flex:0 0 42px;height:1px;background:#c9b18c}
+.story-beat-copy .story-lead{font-size:clamp(16px,1.28vw,18px);line-height:1.83;color:#394c41;margin:0 0 21px}
+.story-beat-copy .story-body{font-size:clamp(14px,1.1vw,16px);line-height:1.92;color:#647067;margin:0}
+.story-beat-copy .story-emphasis{color:#3d5948;font-weight:600;text-decoration:underline;text-decoration-color:rgba(187,155,91,.55);text-decoration-thickness:1px;text-underline-offset:4px}
+.story-apartment{font-weight:700;white-space:nowrap;color:#4b634f}
+.story-transition{padding-top:73px;padding-bottom:43px}
+.story-transition:before{content:'✧';display:block;color:#b39566;font-size:26px;margin-bottom:18px}
+.story-transition .story-transition-line{max-width:680px;margin:19px auto 0;text-wrap:balance}
+.story-beat:nth-of-type(odd) .story-beat-copy{padding-left:clamp(0px,2vw,26px)}
+@media(max-width:760px){
+.story-beat{gap:22px;padding:46px 0}
+.story-beat-copy .story-lead{font-size:17px;line-height:1.77;margin-bottom:14px}
+.story-beat-copy .story-body{font-size:15px;line-height:1.8}
+.story-beat h3{font-size:clamp(40px,9vw,57px);margin-bottom:18px}
+.story-beat:nth-of-type(odd) .story-beat-copy{padding-left:0}
+.story-transition{padding-top:53px}
+}
+
+/* Two real Seattle memories side-by-side on desktop; stacked safely on phones. */
+.story-beat-reverse>.story-duo{order:1;min-width:0;width:100%}
+.story-duo-seattle{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(9px,1vw,16px);align-items:center}
+.story-duo-seattle .story-beat-photo{min-width:0;max-width:100%;padding:7px 7px 11px}
+.story-duo-seattle .story-beat-photo img{max-height:440px;width:100%;height:auto;object-fit:contain}
+.story-duo-seattle .story-beat-photo figcaption{font-size:clamp(18px,2vw,25px);white-space:normal}
+@media(max-width:760px){.story-beat-reverse>.story-duo{order:1}.story-duo-seattle{max-width:550px;margin:0 auto}.story-duo-seattle .story-beat-photo img{max-height:none}}
+
+/* Narrative typography cleanup — consistent reading weight; hierarchy only where meaningful. */
+.story-beat-copy .story-lead,
+.story-beat-copy .story-body{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:clamp(15px,1.22vw,17px);
+  font-weight:400;
+  font-style:normal;
+  line-height:1.82;
+  letter-spacing:0;
+  color:#46574c;
+  margin:0 0 15px;
+}
+.story-beat-copy .story-body{margin-bottom:0}
+.story-beat-copy .story-emphasis,
+.story-beat-copy .story-apartment{
+  font-size:inherit;
+  font-weight:inherit;
+  color:inherit;
+  text-decoration:none;
+  border:0;
+  background:none;
+}
+.story-number:after{display:none}
+.story-transition .story-transition-line{font-weight:500;color:#354f40}
+@media(max-width:760px){
+ .story-beat-copy .story-lead,.story-beat-copy .story-body{
+   font-size:15.5px;line-height:1.78;margin-bottom:14px;
+ }
+ .story-beat-copy .story-body{margin-bottom:0}
+}

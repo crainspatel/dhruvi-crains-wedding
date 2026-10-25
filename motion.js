@@ -1,7 +1,7 @@
 (() => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const targets = [
-    ...document.querySelectorAll('.invitation-note-frame, .intro-art, .intro-copy, .section-title, .day-card, .venue-card, .closing-border, .venue-notice, .dhruvi-head, .pending-day, .family-kicker')
+    ...document.querySelectorAll('.invitation-note-frame, .intro-art, .intro-copy, .section-title, .day-card, .venue-card, .closing-border, .venue-notice, .dhruvi-head, .pending-day, .family-kicker, .moment-card')
   ];
   const progress = document.querySelector('.scroll-progress');
 

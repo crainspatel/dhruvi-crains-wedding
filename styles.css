@@ -222,3 +222,26 @@
 .invitation-bottom-mark{color:#bea374;font-size:20px;margin-top:27px}
 @media(max-width:700px){.invitation-note{padding:72px 17px}.invitation-note-frame{padding:60px 30px 52px}.invitation-note-frame:before{inset:8px}}
 @media(max-width:400px){.invitation-note-frame{padding:48px 24px}.invitation-note h2{font-size:48px}}
+
+
+/* Curated moments gallery */
+.moments-gallery{padding-top:110px;padding-bottom:120px;max-width:1240px}
+.moments-mosaic{display:grid;grid-template-columns:1.1fr .9fr 1fr;gap:22px;align-items:start;grid-auto-flow:dense}
+.moment-card{margin:0;position:relative;background:#fffdf8;border:1px solid #e5dcc9;padding:10px 10px 56px;box-shadow:0 18px 42px rgba(57,46,29,.09);overflow:hidden}
+.moment-card img{display:block;width:100%;height:360px;object-fit:cover;object-position:center;background:#ebe5d9}
+.moment-card.tall img{height:540px}
+.moment-card.wide{grid-column:span 2}
+.moment-card.wide img{height:300px}
+.moment-card figcaption{position:absolute;left:0;right:0;bottom:16px;text-align:center;font:400 clamp(20px,2vw,27px)/1.1 'Great Vibes',cursive;color:#8c7555;padding:0 12px}
+@media(max-width:980px){
+  .moments-mosaic{grid-template-columns:1fr 1fr}
+  .moment-card.wide{grid-column:1 / -1}
+  .moment-card img{height:320px}
+  .moment-card.tall img{height:460px}
+}
+@media(max-width:620px){
+  .moments-gallery{padding:88px 18px 94px}
+  .moments-mosaic{grid-template-columns:1fr;gap:18px}
+  .moment-card,.moment-card.wide{grid-column:auto}
+  .moment-card img,.moment-card.wide img,.moment-card.tall img{height:auto;max-height:none;aspect-ratio:auto}
+}
