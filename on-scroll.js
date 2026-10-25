@@ -1,5 +1,5 @@
 /* Stable natural-height scroll formation: no pinning, no clipping, no layout changes.
-   Scroll-controlled from a centered photo stack into an organic seven-photo board. */
+   Scroll-controlled from a centered photo stack into an organic photo board with family memories. */
 (() => {
   const stage = document.querySelector('.memory-chapter');
   if (!stage) return;
@@ -11,7 +11,7 @@
   if (!window.gsap || !window.ScrollTrigger || reduced.matches) return;
   const gsap = window.gsap;
   gsap.registerPlugin(window.ScrollTrigger);
-  const rotations = [-27, 24, -19, 22, 26, -21, 17];
+  const rotations = [-27, 24, -19, 22, 26, -21, 17, -14, 15];
   let tween;
   function createFormation() {
     if (tween) {tween.scrollTrigger?.kill(); tween.kill();}

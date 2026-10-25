@@ -1,0 +1,13 @@
+/* Family photographs: natural ratios, no cropping, same editorial typography as the existing site. */
+.family-moments{padding:clamp(68px,8vw,112px) clamp(20px,4vw,50px) clamp(68px,8vw,110px);background:#f8f5ee}
+.family-moments-heading{text-align:center;max-width:600px;margin:0 auto clamp(27px,4.5vw,52px)}
+.family-moments-heading::before{content:"";width:1px;height:38px;display:block;margin:0 auto 21px;background:linear-gradient(transparent,#bfa46e)}
+.family-moments-heading .eyebrow{margin:0;letter-spacing:.23em}
+.family-moments-heading h2{font:500 clamp(52px,6.4vw,76px)/1.05 'Cormorant Garamond',serif;letter-spacing:-.04em;color:#324e41;margin:14px 0 15px}
+.family-moments-heading h2 em{color:#bd8f88;font-weight:400}
+.family-moments-heading>p:last-child{font:400 14px/1.8 'DM Sans',sans-serif;color:#74766a;margin:0}
+.family-moments-grid{max-width:1120px;margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(15px,2.5vw,30px);align-items:center}
+.family-moments-photo{margin:0;background:#fffdf8;border:1px solid #e5dcc9;padding:clamp(8px,1vw,12px);box-shadow:0 20px 48px rgba(81,67,38,.08)}
+.family-moments-photo img{display:block;width:100%;height:auto;max-width:100%}
+#celebrations-heading{scroll-margin-top:32px}
+@media(max-width:680px){.family-moments{padding:64px 18px 78px}.family-moments-grid{grid-template-columns:1fr;gap:20px}.family-moments-heading h2{font-size:55px}.family-moments-heading>p:last-child{font-size:13px}}

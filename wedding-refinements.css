@@ -1,0 +1,128 @@
+/* Wedding copy and memories refinements; scoped to existing components. */
+/* Aagrah: hover on desktop, focus/click on touch and keyboard. */
+.aagrah-gloss{display:inline-block;position:relative;white-space:nowrap}
+.aagrah-word{appearance:none;-webkit-appearance:none;border:0;background:none;display:inline-flex;align-items:baseline;gap:.04em;padding:0 1px;margin:0;color:inherit;font:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;cursor:help;vertical-align:baseline;border-bottom:1px dotted #b99d67}
+.aagrah-word:hover,.aagrah-word[aria-expanded="true"]{color:#526c5b}
+.aagrah-word:focus-visible{outline:2px solid #bb9b5b;outline-offset:3px}
+.aagrah-info{font:500 .22em/1 'DM Sans',sans-serif;color:#ac915a;vertical-align:super;margin-left:2px}
+.aagrah-meaning{visibility:hidden;opacity:0;position:absolute;z-index:20;bottom:calc(100% + 13px);left:50%;transform:translate(-50%,5px);width:min(320px,80vw);padding:15px 18px;background:#324e41;color:#fffdf7;box-shadow:0 14px 35px rgba(30,45,34,.23);border-radius:4px;text-align:left;white-space:normal;letter-spacing:0;font:400 13px/1.65 'DM Sans',sans-serif;pointer-events:none;transition:opacity .16s ease,transform .16s ease}
+.aagrah-meaning::after{content:"";position:absolute;top:100%;left:50%;margin-left:-6px;border:6px solid transparent;border-top-color:#324e41}
+.aagrah-gloss:hover .aagrah-meaning,.aagrah-gloss:has(.aagrah-word:focus-visible) .aagrah-meaning,.aagrah-gloss.is-open .aagrah-meaning{visibility:visible;opacity:1;transform:translate(-50%,0)}
+.aagrah-gloss.is-dismissed .aagrah-meaning{visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+@media(max-width:650px){.invitation-note h2{font-size:clamp(39px,10.2vw,54px)}.aagrah-meaning{left:0;transform:translate(0,5px);width:min(280px,83vw);font-size:12px}.aagrah-gloss:hover .aagrah-meaning,.aagrah-gloss:has(.aagrah-word:focus-visible) .aagrah-meaning,.aagrah-gloss.is-open .aagrah-meaning{transform:translate(0,0)}.aagrah-meaning::after{left:45px}}
+/* Two original family photographs belong to the same memory-board, not a separate section. */
+.memory-board>.memory-family-intro{grid-column:1 / -1;justify-self:center;align-self:center;display:flex;align-items:center;gap:15px;margin:12px auto 6px;color:#8c826d;text-align:center}
+.memory-family-intro p{font:500 clamp(17px,2vw,25px)/1.25 'Cormorant Garamond',serif;letter-spacing:.055em;margin:0}
+.memory-family-intro span{color:#b7a16c;font-size:18px}
+.memory-board>.memory-polaroid--family{grid-column:span 2!important;justify-self:center!important;width:min(100%,525px)!important;padding:12px 12px 18px!important;align-self:center!important}
+.memory-board>.memory-polaroid--family figcaption{font-size:clamp(22px,2.4vw,30px);padding-top:14px}
+.memory-board>.memory-polaroid--family .memory-photo img{display:block!important;width:100%!important;height:auto!important;object-fit:contain!important}
+@media(max-width:900px){.memory-board>.memory-polaroid--family{grid-column:1 / -1!important;width:min(100%,535px)!important}}
+@media(max-width:490px){.memory-board>.memory-family-intro{gap:8px;margin:10px auto 4px}.memory-family-intro p{font-size:20px}.memory-board>.memory-polaroid--family{padding:9px 9px 13px!important;width:min(94%,460px)!important}.memory-board>.memory-polaroid--family figcaption{font-size:24px}}
+/* The brand order and ampersand treatment now match the header. */
+footer .footer-wordmark{font:600 30px 'Cormorant Garamond',serif;letter-spacing:.09em;color:#f1eee3;white-space:nowrap}
+footer .footer-wordmark b{font:400 24px 'Great Vibes',cursive;color:#ddc58f}
+@media(prefers-reduced-motion:reduce){.aagrah-meaning{transition:none}}
+
+/* Touch devices should only reveal the definition on an explicit tap. */
+@media(hover:none){.aagrah-gloss:hover .aagrah-meaning{visibility:hidden;opacity:0}.aagrah-gloss.is-open .aagrah-meaning{visibility:visible;opacity:1}}
+
+/* Family welcome: understated acknowledgment in the existing invitation letter. */
+.invitation-note-frame .invitation-family-join{
+  font:italic 500 23px/1.25 'Cormorant Garamond',serif!important;
+  color:#776f60!important;
+  margin:2px auto 22px!important;
+}
+.invitation-family-credits{
+  border-top:1px solid #e0d4bd;
+  max-width:620px;
+  margin:23px auto 0;
+  padding:22px 5px 0;
+  display:flex;
+  flex-direction:column;
+  gap:19px;
+}
+.invitation-family-group{margin:0}
+.invitation-family-label{
+  font:700 9px/1.4 'DM Sans',Arial,sans-serif;
+  letter-spacing:.23em;
+  color:#9a8764;
+  margin:0 0 10px;
+}
+.invitation-family-people{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px 24px;
+}
+.invitation-family-people p{margin:0;min-width:0}
+.invitation-relative{
+  display:block;
+  font:500 clamp(19px,2.2vw,23px)/1.1 'Cormorant Garamond',serif;
+  color:#324e41;
+}
+.invitation-relation{
+  display:block;
+  font:400 10px/1.55 'DM Sans',Arial,sans-serif;
+  color:#817f72;
+  margin-top:3px;
+}
+@media(max-width:410px){
+  .invitation-family-credits{padding:20px 0 0;gap:20px}
+  .invitation-family-people{gap:13px 12px}
+  .invitation-relative{font-size:19px}
+  .invitation-relation{font-size:9px}
+}
+
+
+/* Refinement: clear two-line title; the word itself opens its meaning (no floating info icon). */
+.invitation-note h2.invitation-heading-refined{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:0; margin:19px auto 24px; text-align:center;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:500; line-height:1.01; letter-spacing:-.045em;
+}
+.invitation-heading-first{display:block;white-space:nowrap;font-size:clamp(44px,6.3vw,73px);font-weight:500;color:var(--forest,#324e41)}
+.invitation-heading-second{display:block;font-size:clamp(48px,6.6vw,77px);font-weight:400;letter-spacing:-.04em;line-height:1.02}
+.invitation-heading-second em{font-weight:400;color:var(--rose,#bd8f88)}
+.invitation-heading-refined .aagrah-gloss{white-space:nowrap;vertical-align:baseline}
+.invitation-heading-refined .aagrah-word{
+  display:inline; padding:0; margin:0; border:0; color:inherit;
+  font:inherit; line-height:inherit; letter-spacing:inherit;
+  background:transparent; cursor:help; text-decoration:none;
+  text-decoration-color:transparent; text-underline-offset:.11em;
+}
+.invitation-heading-refined .aagrah-word:hover,
+.invitation-heading-refined .aagrah-word[aria-expanded='true']{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:#bb9b5b}
+.invitation-heading-refined .aagrah-meaning{bottom:auto;top:calc(100% + 12px);left:0;transform:translate(0,-4px);width:min(310px,78vw);font-weight:400}
+.invitation-heading-refined .aagrah-meaning::after{top:auto;bottom:100%;left:30px;right:auto;border-top-color:transparent;border-bottom-color:#324e41}
+.invitation-heading-refined .aagrah-gloss:hover .aagrah-meaning,
+.invitation-heading-refined .aagrah-gloss:has(.aagrah-word:focus-visible) .aagrah-meaning,
+.invitation-heading-refined .aagrah-gloss.is-open .aagrah-meaning{transform:translate(0,0)}
+/* One unified acknowledgement; two parents have identical presentation and no positional family labels. */
+.invitation-family-credits{gap:14px;max-width:625px;padding:20px 0 0;margin-top:21px}
+.invitation-family-together{font:600 10px/1.5 'DM Sans',sans-serif!important;letter-spacing:.14em;color:#8d7853!important;margin:0 auto 5px!important}
+.invitation-family-group{margin:0}
+.invitation-family-label{margin:0 0 9px;font-size:9px;letter-spacing:.18em}
+.invitation-family-people{position:relative;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 18px;align-items:center}
+.invitation-family-people::after{content:'✦';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:400 12px/1 Georgia,serif;color:#bea475;pointer-events:none}
+.invitation-family-people p{display:flex;align-items:center;justify-content:center;min-width:0;margin:0}
+.invitation-family-people .invitation-relative{font:500 clamp(21px,2.1vw,25px)/1.2 'Cormorant Garamond',Georgia,serif;color:#324e41;letter-spacing:-.018em}
+.invitation-family-parents .invitation-relative{display:flex;flex-wrap:wrap;justify-content:center;column-gap:.23em;align-items:baseline}
+.invitation-family-parents .invitation-pair-second{white-space:nowrap}
+.invitation-family-siblings .invitation-relative{font-size:clamp(20px,2.1vw,24px)}
+@media(max-width:600px){
+  .invitation-heading-first{font-size:clamp(39px,10vw,53px)}
+  .invitation-heading-second{font-size:clamp(49px,12vw,61px)}
+  .invitation-heading-refined .aagrah-meaning{width:min(270px,75vw);font-size:12px;left:-10px}
+  .invitation-family-people{gap:12px 10px}
+  .invitation-family-parents .invitation-relative{display:flex;flex-direction:column;align-items:center;gap:0;font-size:clamp(20px,5.2vw,23px)}
+  .invitation-family-people::after{font-size:11px}
+  .invitation-family-credits{gap:14px}
+  .invitation-family-together{font-size:9px!important;letter-spacing:.09em}
+}
+@media(max-width:360px){
+  .invitation-heading-first{font-size:clamp(37px,10vw,43px)}
+  .invitation-heading-second{font-size:clamp(47px,12vw,53px)}
+  .invitation-family-parents .invitation-relative{font-size:19px}
+  .invitation-family-people .invitation-relative{font-size:20px}
+}
