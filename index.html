@@ -14,7 +14,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
 <link href="./styles.css" rel="stylesheet"/>
-<link href="./on-scroll.css" rel="stylesheet"/><link href="./story-journey.css" rel="stylesheet"/></head>
+<link href="./on-scroll.css" rel="stylesheet"/><link href="./story-journey.css" rel="stylesheet"/><link rel="stylesheet" href="./rsvp.css"/></head>
 <body>
 <div aria-hidden="true" class="scroll-progress"></div>
 <a class="skip-link" href="#celebrations">Skip to celebration details</a>
@@ -23,6 +23,7 @@
 <nav aria-label="Main navigation" class="desktop-nav">
 <a href="#invitation">Invitation</a><a href="#our-story">Our story</a><a href="#story-chapter">Our moments</a><a href="#venues">Venues</a>
 </nav>
+<button class="rsvp-nav-button" type="button" aria-haspopup="dialog" aria-controls="wedding-rsvp" data-rsvp-open>RSVP <span aria-hidden="true">↗</span></button>
 </header>
 <main>
 <section aria-labelledby="hero-heading" class="hero" data-section="hero">
@@ -142,5 +143,37 @@
 <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
 <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
 <script defer="" src="./on-scroll.js"></script>
-<script defer="" src="./story-journey.js"></script></body>
+<script defer="" src="./story-journey.js"></script>
+<div id="wedding-rsvp-overlay" class="rsvp-overlay" hidden>
+  <section class="rsvp-modal" id="wedding-rsvp" role="dialog" aria-modal="true" aria-labelledby="rsvp-title" aria-describedby="rsvp-intro" tabindex="-1">
+    <button class="rsvp-close" type="button" data-rsvp-close aria-label="Close RSVP">×</button>
+    <p class="rsvp-overline">DHRUVI &amp; CRAINS · DECEMBER 2026</p>
+    <h2 id="rsvp-title">Kindly <em>RSVP</em></h2>
+    <p id="rsvp-intro">We can't wait to celebrate with you.</p>
+    <form id="wedding-rsvp-form" method="post" target="rsvp-submission-frame" novalidate>
+      <label for="rsvp-name">Your Name <span aria-hidden="true">*</span></label>
+      <input id="rsvp-name" name="name" type="text" autocomplete="name" maxlength="150" required placeholder="Your name"/>
+      <label for="rsvp-count">Number of People Attending <span aria-hidden="true">*</span></label>
+      <p class="rsvp-field-hint">Please include yourself in the total.</p>
+      <input id="rsvp-count" name="count" type="text" inputmode="numeric" autocomplete="off" pattern="[1-9][0-9]*" required placeholder="Including yourself"/>
+      <fieldset class="rsvp-options"><legend>Arrangements Required <span aria-hidden="true">*</span></legend>
+        <label><input type="radio" name="arrangements" value="No arrangements needed" required/><span>No arrangements needed</span></label>
+        <label><input type="radio" name="arrangements" value="Transportation only"/><span>Transportation only</span></label>
+        <label><input type="radio" name="arrangements" value="Accommodation only"/><span>Accommodation only</span></label>
+        <label><input type="radio" name="arrangements" value="Both transportation and accommodation"/><span>Both transportation and accommodation</span></label>
+      </fieldset>
+      <input type="hidden" name="nonce" id="rsvp-nonce" />
+      <div class="rsvp-status" id="rsvp-status" role="status" aria-live="polite"></div>
+      <button class="rsvp-submit" type="submit">Send RSVP</button>
+    </form>
+    <div class="rsvp-success" id="rsvp-success" hidden role="status" aria-live="polite">
+      <span aria-hidden="true" class="rsvp-success-symbol">♡</span>
+      <h3>Thank you!</h3>
+      <p>Your RSVP has been received. We can't wait to celebrate with you.</p>
+      <button class="rsvp-done" type="button" data-rsvp-close>Back to the celebrations</button>
+    </div>
+    <iframe name="rsvp-submission-frame" id="rsvp-submission-frame" title="RSVP submission response" class="rsvp-response-frame" aria-hidden="true" tabindex="-1"></iframe>
+  </section>
+</div>
+<script defer src="./rsvp.js"></script></body>
 </html>
