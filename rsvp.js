@@ -14,7 +14,19 @@ let oldFocus=null, waiting=false, nonce='', timeout=null;
 form.action=ENDPOINT;
 function show(){oldFocus=document.activeElement;modal.hidden=false;document.body.classList.add('rsvp-locked');dialog.querySelector('.rsvp-close').focus();}
 function hide(){if(waiting)return;modal.hidden=true;document.body.classList.remove('rsvp-locked');if(oldFocus && typeof oldFocus.focus==='function')oldFocus.focus();}
-function finish(ok,msg){if(!waiting)return;waiting=false;clearTimeout(timeout);submit.disabled=false;submit.textContent='Send RSVP';if(ok){form.hidden=true;success.hidden=false;status.textContent='';}else{status.textContent=msg||'We could not confirm your RSVP. Please check with us before trying again.';}}
+function finish(ok,msg){
+ if(!waiting)return;
+ waiting=false;clearTimeout(timeout);submit.disabled=false;submit.textContent='Send RSVP';
+ if(ok){
+   form.hidden=true;
+   success.hidden=false;
+   status.textContent='';
+   success.setAttribute('tabindex','-1');
+   success.focus();
+ }else{
+   status.textContent=msg||'We could not confirm your RSVP. Please check with us before trying again.';
+ }
+}
 opener.addEventListener('click',show);
 dialog.querySelectorAll('[data-rsvp-close]').forEach(b=>b.addEventListener('click',hide));
 modal.addEventListener('mousedown',e=>{if(e.target===modal)hide();});

@@ -1,0 +1,55 @@
+// Replace Code.gs and deploy a NEW VERSION before publishing the RSVP website.
+// Bound to the private Google Sheet. All submissions are anonymous/public; the sheet itself remains private.
+const SHEET_NAME = 'Form Responses 1';
+const WEBSITE_ORIGIN = 'https://crainsdhruvi.com';
+const ARRANGEMENTS = ['No arrangements needed','Transportation only','Accommodation only','Both transportation and accommodation'];
+
+function doPost(e) {
+  const p = e && e.parameter ? e.parameter : {};
+  const name = String(p.name || '').trim();
+  const count = String(p.count || '').trim();
+  const arrangements = String(p.arrangements || '');
+  const nonce = String(p.nonce || '');
+  // Server validates regardless of browser validation. Never disclose stored data.
+  let ok = false;
+  const lock = LockService.getScriptLock();
+  let locked = false;
+  try {
+    if (!name || name.length > 150 || !/^[1-9][0-9]*$/.test(count) ||
+        !Number.isSafeInteger(Number(count)) || !ARRANGEMENTS.includes(arrangements) ||
+        !/^[a-zA-Z0-9-]{10,90}$/.test(nonce)) {
+      throw new Error('Invalid RSVP');
+    }
+    const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+    const sheet = spreadsheet.getSheetByName(SHEET_NAME);
+    if (!sheet) throw new Error('Response sheet missing');
+    lock.waitLock(20000);
+    locked = true;
+    const safeName = /^[=+\-@\t\r]/.test(name) ? "'" + name : name;
+    sheet.appendRow([new Date(), safeName, Number(count), arrangements]);
+    SpreadsheetApp.flush();
+    ok = true;
+    // Email is best effort; failures cannot erase a stored RSVP.
+    try {
+      const mailTo = Session.getEffectiveUser().getEmail();
+      if (mailTo) MailApp.sendEmail({
+        to: mailTo,
+        subject: 'New wedding RSVP — ' + name,
+        body: 'Name: ' + name + '\nPeople attending: ' + count +
+              '\nArrangements: ' + arrangements + '\n\n' + spreadsheet.getUrl()
+      });
+    } catch (mailErr) { console.error('Email failed', mailErr); }
+  } catch (err) { console.error('RSVP failure', err); }
+  finally { if (locked) lock.releaseLock(); }
+
+  // A cross-origin iframe cannot expose its contents to the website.
+  // Send only the result + unpredictable per-submission nonce via postMessage.
+  // Do not return guest data, spreadsheet links, or identifying responses.
+  const payload = JSON.stringify({type:'wedding-rsvp-result',ok:ok,nonce:nonce})
+      .replace(/</g, '\\u003c');
+  const html = '<!doctype html><html><head><meta charset="utf-8"></head><body>'+
+      '<script>window.top.postMessage(' + payload + ',' +
+      JSON.stringify(WEBSITE_ORIGIN) + ');<\/script></body></html>';
+  return HtmlService.createHtmlOutput(html)
+      .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
