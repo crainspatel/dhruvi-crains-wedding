@@ -7,18 +7,18 @@
 .memory-intro p:not(.eyebrow){font-size:14px;color:#7c776b}
 .memory-hint{font-size:11px!important;letter-spacing:.17em;margin-top:18px!important}
 .memory-board{width:min(100%,1160px);margin:auto;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:auto;gap:24px;align-items:start;justify-items:center;overflow:visible!important;position:relative}
-.memory-polaroid,.memory-polaroid:nth-child(7){display:block!important;position:relative!important;inset:auto!important;grid-column:auto!important;align-self:start!important;width:100%!important;min-width:0!important;max-width:none!important;height:auto!important;overflow:visible!important;margin:0!important;padding:10px 10px 16px!important;background:#fffdfa;border:1px solid #e4dccb;box-shadow:0 15px 38px rgba(65,51,33,.13);transform:rotate(var(--angle));transform-origin:center center;will-change:transform,opacity}
-.memory-polaroid:nth-child(5){grid-column:1 / 2}
-.memory-polaroid:nth-child(6){grid-column:2 / 3}
-.memory-polaroid:nth-child(7){grid-column:3 / 5!important;width:min(80%,370px)!important}
+.memory-polaroid,.memory-polaroid:nth-child(10){display:block!important;position:relative!important;inset:auto!important;grid-column:auto!important;align-self:start!important;width:100%!important;min-width:0!important;max-width:none!important;height:auto!important;overflow:visible!important;margin:0!important;padding:10px 10px 16px!important;background:#fffdfa;border:1px solid #e4dccb;box-shadow:0 15px 38px rgba(65,51,33,.13);transform:rotate(var(--angle));transform-origin:center center;will-change:transform,opacity}
+.memory-polaroid:nth-child(8){grid-column:1 / 2}
+.memory-polaroid:nth-child(9){grid-column:2 / 3}
+.memory-polaroid:nth-child(10){grid-column:3 / 5!important;width:min(80%,370px)!important}
 .memory-photo{height:auto!important;min-height:0!important;max-height:none!important;width:100%!important;overflow:visible!important;display:block!important;background:transparent!important;aspect-ratio:auto!important}
 .memory-photo img{display:block!important;height:auto!important;width:100%!important;max-width:100%!important;max-height:none!important;object-fit:initial!important;aspect-ratio:auto!important}
 .memory-polaroid figcaption{position:static!important;display:block;text-align:center;padding:12px 4px 0;line-height:1.1;white-space:normal!important;font:clamp(20px,2vw,27px) 'Great Vibes',cursive;color:#856e59}
 .memory-outro{color:#897256;letter-spacing:.06em;text-align:center;font-size:13px;margin:55px 0 0}
 .memory-line{display:none}
-@media(min-width:1000px){.memory-polaroid:nth-child(1){margin-top:50px!important}.memory-polaroid:nth-child(2){margin-top:5px!important}.memory-polaroid:nth-child(3){margin-top:70px!important}.memory-polaroid:nth-child(4){margin-top:20px!important}.memory-polaroid:nth-child(6){margin-top:30px!important}}
-@media(max-width:900px){.memory-chapter{padding:75px 18px 90px}.memory-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px}.memory-polaroid:nth-child(n){grid-column:auto!important;width:100%!important;margin-top:0!important}.memory-polaroid:nth-child(7){grid-column:1 / -1!important;width:min(65%,340px)!important}.memory-intro{margin-bottom:38px}}
-@media(max-width:490px){.memory-board{gap:16px 12px}.memory-polaroid,.memory-polaroid:nth-child(n){padding:7px 7px 11px!important}.memory-polaroid figcaption{font-size:18px}.memory-polaroid:nth-child(7){width:min(72%,280px)!important}.memory-chapter{padding:68px 14px 77px}}
+@media(min-width:1000px){.memory-polaroid:nth-child(1){margin-top:50px!important}.memory-polaroid:nth-child(2){margin-top:5px!important}.memory-polaroid:nth-child(3){margin-top:70px!important}.memory-polaroid:nth-child(4){margin-top:20px!important}.memory-polaroid:nth-child(9){margin-top:30px!important}}
+@media(max-width:900px){.memory-chapter{padding:75px 18px 90px}.memory-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px}.memory-polaroid:nth-child(n){grid-column:auto!important;width:100%!important;margin-top:0!important}.memory-polaroid:nth-child(10){grid-column:1 / -1!important;width:min(65%,340px)!important}.memory-intro{margin-bottom:38px}}
+@media(max-width:490px){.memory-board{gap:16px 12px}.memory-polaroid,.memory-polaroid:nth-child(n){padding:7px 7px 11px!important}.memory-polaroid figcaption{font-size:18px}.memory-polaroid:nth-child(10){width:min(72%,280px)!important}.memory-chapter{padding:68px 14px 77px}}
 /* Additional five memories keep their genuine aspect ratios. */
 .moments-gallery{max-width:1200px;padding:90px 30px 120px}
 .moments-mosaic{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start}
