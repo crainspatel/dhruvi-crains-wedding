@@ -88,11 +88,12 @@ footer .footer-wordmark b{font:400 24px 'Great Vibes',cursive;color:#ddc58f}
 .invitation-heading-refined .aagrah-word{
   display:inline; padding:0; margin:0; border:0; color:inherit;
   font:inherit; line-height:inherit; letter-spacing:inherit;
-  background:transparent; cursor:help; text-decoration:none;
-  text-decoration-color:transparent; text-underline-offset:.11em;
+  background:transparent; cursor:help; text-decoration:underline;
+  text-decoration-style:dotted; text-decoration-thickness:2px;
+  text-decoration-color:#b99d67; text-underline-offset:.13em;
 }
 .invitation-heading-refined .aagrah-word:hover,
-.invitation-heading-refined .aagrah-word[aria-expanded='true']{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:#bb9b5b}
+.invitation-heading-refined .aagrah-word[aria-expanded='true']{color:inherit;text-decoration:underline;text-decoration-style:solid;text-decoration-thickness:2px;text-decoration-color:#a78b55}
 .invitation-heading-refined .aagrah-meaning{bottom:auto;top:calc(100% + 12px);left:0;transform:translate(0,-4px);width:min(310px,78vw);font-weight:400}
 .invitation-heading-refined .aagrah-meaning::after{top:auto;bottom:100%;left:30px;right:auto;border-top-color:transparent;border-bottom-color:#324e41}
 .invitation-heading-refined .aagrah-gloss:hover .aagrah-meaning,
